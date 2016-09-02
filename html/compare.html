@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CompareJs</title>
+    <link href="../bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../bootstrapvalidator/css/bootstrapValidator.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div role="form" class="form-horizontal">
+        <form id="compareForm" role="form"
+              data-bv-message="校验不通过"
+              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+            <div class="form-group">
+                <label for="sourceFiles" class="col-sm-4 control-label">请选择关键字csv文件：</label>
+                <div class="col-sm-3">
+                    <input type="file" name="sourceFiles" id="sourceFiles" multiple="" data-bv-notempty="true" data-bv-notempty-message="关键字csv文件不能为空">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sourceFileEncoding" class="col-sm-4 control-label">请输入关键字csv文件编码格式：</label>
+                <div class="col-sm-3">
+                    <input type="text" name="sourceFileEncoding" id="sourceFileEncoding" class="form-control" data-bv-notempty="true" data-bv-notempty-message="关键字csv文件编码格式不能为空">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sourceTd" class="col-sm-4 control-label">请选择关键字所在的列数：</label>
+                <div class="col-sm-3"><input type="number" name="sourceTd" id="sourceTd" class="form-control" data-bv-notempty="true" data-bv-notempty-message="关键字所在的列数不能为空"></div>
+            </div>
+            <div class="form-group">
+                <label for="searchFiles" class="col-sm-4 control-label">请选择需要查询的csv文件：</label>
+                <div class="col-sm-3"><input type="file" name="searchFiles" id="searchFiles" multiple="" data-bv-notempty="true" data-bv-notempty-message="需要查询的csv文件不能为空"></div>
+            </div>
+            <div class="form-group">
+                <label for="searchFileEncoding" class="col-sm-4 control-label">请输入需要查询的csv文件编码格式：</label>
+                <div class="col-sm-3"><input type="text" name="searchFileEncoding" id="searchFileEncoding"
+                                             class="form-control" data-bv-notempty="true" data-bv-notempty-message="需要查询的csv文件编码格式不能为空"></div>
+            </div>
+            <div class="form-group">
+                <label for="searchTd" class="col-sm-4 control-label">请选择搜索关键字所在的列数：</label>
+                <div class="col-sm-3"><input type="number" name="searchTd" id="searchTd" class="form-control" data-bv-notempty="true" data-bv-notempty-message="搜索关键字所在的列数不能为空"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-lg-12">
+                    <button id="submit" class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#myModal">处理</button>
+                </div>
+            </div>
+            <div id="result" class="col-sm-offset-2">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<!--基类-->
+<script type="text/javascript" src="../util/jquery.min.js"></script>
+<script type="text/javascript" src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrapvalidator/js/bootstrapValidator.min.js"></script>
+<!--查询文件编码-->
+<script type="text/javascript" src="../util/encoding.js"></script>
+<!-- 解析CVS文件 -->
+<script type="text/javascript" src="../util/papaparse.js"></script>
+<script type="text/javascript" src="../js/compare.js"></script>
+</html>
