@@ -1,0 +1,23 @@
+{
+  "name": "CompareCSV",
+  "version": "0.0.1",
+  "appPath": "app",
+  "moduleName": "CompareCSV",
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap":"latest",
+    "bootstrapValidator":"0.5.3"
+  },
+  "devDependencies": {
+    "qunit": "~1.12.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
