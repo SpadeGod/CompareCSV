@@ -115,32 +115,13 @@ $(function () {
         var sourceTd = $('#sourceTd').val();
         var searchTd = $('#searchTd').val();
         //解析源文件数据
-        $('#sourceFiles').parse({
-            config: sourceConfig,
-            before: function (file, inputElem) {
-                console.log('Parsing file...', file);
-              },
-
-            error: function (err, file) {
-                console.log('ERROR:', err, file);
-              },
-
-            complete: function () {
-                console.log('Done with all files');
-              },
+        var stream = $('#sourceFiles').parse({
+            config: sourceConfig
           });
 
         //解析搜索文件数据
-        $('#searchFiles').parse({
+        var searchStream = $('#searchFiles').parse({
             config: searchConfig,
-            before: function (file, inputElem) {
-                console.log('Parsing file...', file);
-              },
-
-            error: function (err, file) {
-                console.log('ERROR:', err, file);
-              },
-
             complete: function () {
                 dealData(datas, sourceTd, searchTd);
                 // console.log(datas);

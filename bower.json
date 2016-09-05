@@ -6,7 +6,10 @@
   "dependencies": {
     "jquery": "latest",
     "bootstrap":"latest",
-    "bootstrapValidator":"0.5.3"
+    "bootstrapValidator":"0.5.3",
+    "react":"15.3.1",
+    "babel":"5.8.38",
+    "remarkable":"1.6.2"
   },
   "devDependencies": {
     "qunit": "~1.12.0"
