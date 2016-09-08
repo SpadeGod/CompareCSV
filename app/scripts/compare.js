@@ -185,7 +185,7 @@ $(function () {
         var results = [];
         var sourceRowSet = new Set();
         for (var i = 1; i < sourceData.length; i++) {
-          var sourceRow = sourceData[i][sourceTd] + '';
+          var sourceRow = sourceData[i][sourceTd].toLowerCase();
           sourceRowSet.add(sourceRow);
         }
 
@@ -193,7 +193,7 @@ $(function () {
             if (sourceRow != '') {
               var searchRowObjs = [];
               for (var j = 1; j < searchData.length; j++) {
-                var searchRow = searchData[j][searchTd] + '';
+                var searchRow = searchData[j][searchTd].toLowerCase();
                 if (isContains(searchRow, sourceRow)) {
                   var searchRowInfo = new SearchRowObj(j, searchRow);
                   searchRowObjs.push(searchRowInfo);
@@ -224,7 +224,7 @@ $(function () {
           var sourceWord = sourceRowObj.sourceWord;
           var searchRows = sourceRowObj.searchRows;
           if (searchRows instanceof Array && searchRows.length > 0) {
-            content += "<p class='text-justify'><font color='red'>关键字：''" + sourceWord + "'' 命中 " + searchRows.length + ' 次</font><br/><br/>';
+            content += '<p class=\'text-justify\'><font color=\'red\'>关键字：\'\'' + sourceWord + '\'\' 命中 ' + searchRows.length + ' 次</font><br/><br/>';
             content += ' 出现在：第 ';
             for (var j = 0; j < searchRows.length; j++) {
               var searchRow = searchRows[j];
@@ -236,7 +236,7 @@ $(function () {
 
             content = content.replace(/,$/gi, '');
             content += ' 行<br/><br/>';
-            content += "<font color='#008b8b'> = = = = = = = = = = = = = 我是华丽的分割线 0.0 = = = = = = = = = = = = = =</font></p><br/><br/><br/><br/>";
+            content += '<font color=\'#008b8b\'> = = = = = = = = = = = = = 我是华丽的分割线 0.0 = = = = = = = = = = = = = =</font></p><br/><br/><br/><br/>';
           }
         }
       }
